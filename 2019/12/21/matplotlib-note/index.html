@@ -734,14 +734,14 @@ x = np">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1k
+                        1.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        6 分
                     </div>
                     
                 
@@ -871,6 +871,18 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 <tr>
 <td>label</td>
 <td>线条名称，用于图例</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>lines</td>
+<td>A <span style='color:red'>line</span> of <code>.Line2D</code> objects representing the plotted data</td>
 </tr>
 </tbody></table>
 <h3 id="条形图"><a href="#条形图" class="headerlink" title="条形图"></a>条形图</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># coding=utf-8</span>
@@ -1036,7 +1048,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 <pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># coding=utf-8</span>
 <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-x1 <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+x1 <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 均值为0，标准差为0.8的正太分布</span>
 x2 <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
 x3 <span class="token operator">=</span>  np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
 kwargs <span class="token operator">=</span> dict<span class="token punctuation">(</span>histtype<span class="token operator">=</span><span class="token string">"stepfilled"</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span> density<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> bins<span class="token operator">=</span><span class="token number">40</span><span class="token punctuation">)</span>
@@ -1045,6 +1057,73 @@ plt<span class="token punctuation">.</span>hist<span class="token punctuation">(
 plt<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x3<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/images/matplotplit-notes/hist2.png" alt="hist2"></p>
+<h3 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># coding=utf-8</span>
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">def</span> <span class="token function">printf</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">"{:.2f}%"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>val<span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    labels <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"SH"</span><span class="token punctuation">,</span> <span class="token string">"BI"</span><span class="token punctuation">,</span> <span class="token string">"SZ"</span><span class="token punctuation">,</span> <span class="token string">"GD"</span><span class="token punctuation">]</span>
+    fracs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+    patches<span class="token punctuation">,</span> tests<span class="token punctuation">,</span> auto_tests <span class="token operator">=</span> plt<span class="token punctuation">.</span>pie<span class="token punctuation">(</span>fracs<span class="token punctuation">,</span> explode<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> labels<span class="token operator">=</span>labels<span class="token punctuation">,</span> autopct<span class="token operator">=</span>printf<span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/matplotplit-notes/pie.png" alt="pie"></p>
+<p>pie(self, x, explode=None, labels=None, colors=None,autopct=None, pctdistance=0.6, shadow=False, labeldistance=1.1,startangle=None, radius=None, counterclock=True, wedgeprops=None, textprops=None, center=(0, 0),frame=False, rotatelabels=False)</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x</td>
+<td>array-like,The wedge sizes</td>
+</tr>
+<tr>
+<td>explode</td>
+<td>array-like，数组中每一个值是偏移中心位置的半径</td>
+</tr>
+<tr>
+<td>label</td>
+<td>每一个扇形的名称</td>
+</tr>
+<tr>
+<td>colors</td>
+<td>array-like, 指定每一个扇形的颜色</td>
+</tr>
+<tr>
+<td>autopct</td>
+<td>string, or function，标签化值</td>
+</tr>
+<tr>
+<td>shadow</td>
+<td>阴影</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>patches</td>
+<td>A sequence of :class:<code>matplotlib.patches.Wedge</code> instances</td>
+</tr>
+<tr>
+<td>texts</td>
+<td>A list of the label :class:<code>matplotlib.text.Text</code> instances.</td>
+</tr>
+<tr>
+<td>autotexts</td>
+<td>A list of :class:<code>~matplotlib.text.Text</code> instances for the numericlabels. This will only be returned if the parameter <em>autopct</em> isnot <em>None</em>.</td>
+</tr>
+</tbody></table>
 
             </div>
             <hr/>
@@ -1491,7 +1570,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">2.2k</span> 字
+                <span class="white-color">2.4k</span> 字
             
 
             
