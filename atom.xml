@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>TV fan</title>
+  
+  <subtitle>ywfan</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://ywfan617.github.io/"/>
+  <updated>2020-01-12T07:20:47.505Z</updated>
+  <id>https://ywfan617.github.io/</id>
+  
+  <author>
+    <name>ywfan</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>matplotplit_note</title>
+    <link href="https://ywfan617.github.io/2019/12/21/matplotlib-note/"/>
+    <id>https://ywfan617.github.io/2019/12/21/matplotlib-note/</id>
+    <published>2019-12-21T09:53:50.000Z</published>
+    <updated>2020-01-12T07:20:47.505Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Matplotlib学习笔记&quot;&gt;&lt;a href=&quot;#Matplotlib学习笔记&quot; class=&quot;headerlink&quot; title=&quot;Matplotlib学习笔记&quot;&gt;&lt;/a&gt;Matplotlib学习笔记&lt;/h1&gt;&lt;h2 id=&quot;一-基础知识&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="python第三方库" scheme="https://ywfan617.github.io/categories/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"/>
+    
+    
+      <category term="数据可视化" scheme="https://ywfan617.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+  </entry>
+  
+</feed>
