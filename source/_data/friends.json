@@ -1,0 +1,21 @@
+[
+    {
+	    "avatar": "/medias/avatars/ywfan.png",
+	    "name": "Course",
+	    "introduction": "UESTC CVer",
+	    "url": "https://study.163.com/course/courseLearn.htm?courseId=1004570029#/learn/video?lessonId=1049049771&courseId=1004570029",
+	    "title": "认真学习"
+    },{
+        "name": "DBLP",
+        "url": "https://dblp.uni-trier.de/",
+        "title": "访问主页",
+        "introduction": "论文检索",
+        "avatar": "/medias/avatars/dblp.png"
+    },{
+        "name": "网站集合",
+        "url": "http://www.bewindoweb.com/dwg.php",
+        "title": "搜索查找",
+        "introduction": "各种常用网站列表",
+        "avatar": "/medias/avatars/search.png"
+    }
+]
