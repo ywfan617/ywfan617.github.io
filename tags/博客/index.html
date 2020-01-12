@@ -129,15 +129,6 @@
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/galleries" class="waves-effect waves-light">
-            
-            <i class="fa fa-photo"></i>
-            
-            <span>相册</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
         <a href="/about" class="waves-effect waves-light">
             
             <i class="fa fa-user-circle-o"></i>
@@ -222,19 +213,6 @@
                 <i class="fa fa-archive"></i>
               
               <span>归档</span>
-            </a>
-
-            
-      </li>
-    
-      <li class="hide-on-med-and-down nav-item" >
-
-        
-            <a href="/galleries" class="waves-effect waves-light">
-              
-                <i class="fa fa-photo"></i>
-              
-              <span>相册</span>
             </a>
 
             
@@ -343,15 +321,6 @@
         </li>
         
         <li>
-            <a href="/galleries" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-photo"></i>
-                
-                相册
-            </a>
-        </li>
-        
-        <li>
             <a href="/about" class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-user-circle-o"></i>
@@ -433,17 +402,6 @@
                         <i class="fa fa-fw fa-archive"></i>
                         
                         归档
-                    </a>
-              
-            </li>
-        
-        <li class="m-nav-item">
-                
-                    <a href="/galleries" class="waves-effect waves-light">
-                        
-                        <i class="fa fa-fw fa-photo"></i>
-                        
-                        相册
                     </a>
               
             </li>
@@ -566,9 +524,9 @@
                 <!-- 
                     ywfan
                  -->
-                
+                <!-- 
                     标签
-                
+                 -->
             </div>
 
             <div class="description center-align">
@@ -604,10 +562,19 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             <div class="tag-chips">
                 
                 
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" title="数据可视化: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="数据可视化" style="background-color: #F9EBEA;">数据可视化
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/Hexo/" title="Hexo: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Hexo" style="background-color: #F9EBEA;">Hexo
+                            data-tagname="Hexo" style="background-color: #F5EEF8;">Hexo
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -616,7 +583,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/tags/Github/" title="Github: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Github" style="background-color: #F5EEF8;">Github
+                            data-tagname="Github" style="background-color: #D5F5E3;">Github
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -625,16 +592,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/tags/%E5%8D%9A%E5%AE%A2/" title="博客: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            data-tagname="博客" style="background-color: #D5F5E3;">博客
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" title="数据可视化: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="数据可视化" style="background-color: #E8F8F5;">数据可视化
+                            data-tagname="博客" style="background-color: #E8F8F5;">博客
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -902,13 +860,6 @@ $(function () {
         
 
         <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
-        
-            <script type="text/javascript">
-            var windowWidth = $(window).width();
-            if (windowWidth > 992) {
-                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
-            }
-            </script>
         
 
     </body>
