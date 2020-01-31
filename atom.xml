@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ywfan617.github.io/"/>
-  <updated>2020-01-12T07:20:47.505Z</updated>
+  <updated>2020-01-30T03:27:35.021Z</updated>
   <id>https://ywfan617.github.io/</id>
   
   <author>
@@ -17,11 +17,109 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>transH</title>
+    <link href="https://ywfan617.github.io/2020/01/28/transh/"/>
+    <id>https://ywfan617.github.io/2020/01/28/transh/</id>
+    <published>2020-01-28T02:40:08.000Z</published>
+    <updated>2020-01-30T03:27:35.021Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;我们处理将由实体和关系组成的大规模知识图谱嵌入到连续向量空间中的问题。TransE是一种有效的嵌入方法。但是
+        
+      
+    
+    </summary>
+    
+      <category term="知识图谱嵌入" scheme="https://ywfan617.github.io/categories/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%B5%8C%E5%85%A5/"/>
+    
+    
+      <category term="TranH论文笔记" scheme="https://ywfan617.github.io/tags/TranH%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cudada_knowledge</title>
+    <link href="https://ywfan617.github.io/2020/01/20/cuda-knowledge/"/>
+    <id>https://ywfan617.github.io/2020/01/20/cuda-knowledge/</id>
+    <published>2020-01-20T01:43:36.000Z</published>
+    <updated>2020-01-20T03:25:31.993Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;cuda的相关操作&quot;&gt;&lt;a href=&quot;#cuda的相关操作&quot; class=&quot;headerlink&quot; title=&quot;cuda的相关操作&quot;&gt;&lt;/a&gt;cuda的相关操作&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;查看驱动版本&lt;/p&gt;
+&lt;pre
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>link prediction</title>
+    <link href="https://ywfan617.github.io/2020/01/15/link-prediction/"/>
+    <id>https://ywfan617.github.io/2020/01/15/link-prediction/</id>
+    <published>2020-01-15T04:09:41.000Z</published>
+    <updated>2020-01-21T09:31:26.714Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;链路预测的背景&quot;&gt;&lt;a href=&quot;#链路预测的背景&quot; class=&quot;headerlink&quot; title=&quot;链路预测的背景&quot;&gt;&lt;/a&gt;链路预测的背景&lt;/h2&gt;&lt;p&gt;通常来说，KB以三元组 (h, r, t) 的集合的形式呈现，其中
+        
+      
+    
+    </summary>
+    
+      <category term="KG" scheme="https://ywfan617.github.io/categories/KG/"/>
+    
+    
+      <category term="KRL" scheme="https://ywfan617.github.io/tags/KRL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://ywfan617.github.io/2020/01/12/xian-xing-dai-shu-ji-chu-yi/"/>
+    <id>https://ywfan617.github.io/2020/01/12/xian-xing-dai-shu-ji-chu-yi/</id>
+    <published>2020-01-12T07:45:48.398Z</published>
+    <updated>2020-01-29T13:28:56.370Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;title: 线性代数基础一&lt;br&gt;author: 范耀文&lt;br&gt;top: false&lt;br&gt;cover: false&lt;br&gt;toc: true&lt;br&gt;mathjax: true&lt;br&gt;date: 2020-01-12 15:45:48&lt;br&gt;img:
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>matplotplit_note</title>
     <link href="https://ywfan617.github.io/2019/12/21/matplotlib-note/"/>
     <id>https://ywfan617.github.io/2019/12/21/matplotlib-note/</id>
     <published>2019-12-21T09:53:50.000Z</published>
-    <updated>2020-01-12T07:20:47.505Z</updated>
+    <updated>2020-01-12T08:30:29.315Z</updated>
     
     <summary type="html">
     
