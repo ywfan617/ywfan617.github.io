@@ -6,10 +6,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Data Miner KG DeepLearning MachineLearning TVfan ywfan  知识图谱 机器学习">
+    <meta name="keywords" content="线性代数基础一, Data Miner KG DeepLearning MachineLearning TVfan ywfan  知识图谱 机器学习">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="title: 线性代数基础一author: 范耀文top: falsecover: falsetoc: truemathjax: truedate: 2020-01-12 15:45:48img: /medias/banner/linear">
+    <meta name="description" content="basic conceptionZero Matrixmatrix with all zero entries, denoted by $O$ (any size) or $O_{m \times n}$
+For example, a 2-">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>TV fan</title>
+    <title>线性代数基础一 | TV fan</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -532,13 +533,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/linear.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        
+                        线性代数基础一
                     </div>
                 </div>
             </div>
@@ -648,12 +649,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/线性代数/" target="_blank">
+                                <span class="chip bg-color">线性代数</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/机器学习数学篇/" class="post-category" target="_blank">
+                                机器学习数学篇
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -667,7 +681,7 @@
                 <div class="post-author info-break-policy">
                     <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
                     
-                        ywfan
+                        范耀文
                     
                 </div>
 
@@ -699,12 +713,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>title: 线性代数基础一<br>author: 范耀文<br>top: false<br>cover: false<br>toc: true<br>mathjax: true<br>date: 2020-01-12 15:45:48<br>img: /medias/banner/linear.jpg<br>coverImg: /medias/banner/2.jpg<br>password:<br>summary:<br>tags: </p>
-<ul>
-<li>线性代数<br>categories: </li>
-<li>机器学习数学篇<br>typora-root-url: ..</li>
-</ul>
-<h1 id="basic-conception"><a href="#basic-conception" class="headerlink" title="basic conception"></a>basic conception</h1><h2 id="Zero-Matrix"><a href="#Zero-Matrix" class="headerlink" title="Zero Matrix"></a>Zero Matrix</h2><p>matrix with all zero entries, denoted by $O$ (any size) or $O_{m \times n}$</p>
+                <h1 id="basic-conception"><a href="#basic-conception" class="headerlink" title="basic conception"></a>basic conception</h1><h2 id="Zero-Matrix"><a href="#Zero-Matrix" class="headerlink" title="Zero Matrix"></a>Zero Matrix</h2><p>matrix with all zero entries, denoted by $O$ (any size) or $O_{m \times n}$</p>
 <p>For example, a 2-by-3 zero matrix can be denoted</p>
 <script type="math/tex; mode=display">
 O_{2 \times 3} = \left[
@@ -720,7 +729,7 @@ I_3 = \left[
   0 & 1 & 0 \\
   0 & 0 & 1
 \end{matrix}
-\right]</script><h2 id="0-1-matrices"><a href="#0-1-matrices" class="headerlink" title="(0,1)matrices"></a>(0,1)matrices</h2><p>all the entities of A are zeros and ones called (0,1)matrices.</p>
+\right]</script><h2 id="0-1-matrices"><a href="#0-1-matrices" class="headerlink" title="$(0,1)$ matrices"></a>$(0,1)$ matrices</h2><p>all the entities of A are zeros and ones called (0,1)matrices.</p>
 <script type="math/tex; mode=display">
 I_3 = \left[
 \begin{matrix}
@@ -729,7 +738,7 @@ I_3 = \left[
   1&0&0&0\\
   0 & 1 & 0&0
 \end{matrix}
-\right]</script> <font color="red">get symmetirc matrix:$A_TA$</font>   
+\right]</script> <font color="red">get symmetirc matrix:$A^TA$</font>   
 
 <p>在生活中，我们会经常用到(0,1)矩阵(涉及图)</p>
 <h2 id="Standard-Vectors"><a href="#Standard-Vectors" class="headerlink" title="Standard Vectors"></a>Standard Vectors</h2><p>we can write any vector $\left[<br>\begin{matrix}<br>  {a}\\<br>  {b}\\<br>\end{matrix}<br>\right]$in $R^2$ as a linear combination of the two vectors $\left[<br>\begin{matrix}<br>  {1}\\<br>  {0}\\<br>\end{matrix}<br>\right]$and$\left[<br>\begin{matrix}<br>  {0}\\<br>  {1}\\<br>\end{matrix}<br>\right]$</p>
@@ -1267,7 +1276,7 @@ E_1^{-1}=\left[
                     </span>
                     <a href="https://ywfan617.github.io" class="b-link-green">TV fan</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2020/01/12/xian-xing-dai-shu-ji-chu-yi/" class="b-link-green"></a>
+                    <a href="/2020/01/12/xian-xing-dai-shu-ji-chu-yi/" class="b-link-green">线性代数基础一</a>
                 </p>
             </div>
 
@@ -1524,6 +1533,13 @@ E_1^{-1}=\left[
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
         <footer class="page-footer bg-color">
     <div class="container row left-align">

@@ -43,11 +43,11 @@
   </entry>
   
   <entry>
-    <title>cudada_knowledge</title>
+    <title>cuda_knowledge</title>
     <link href="https://ywfan617.github.io/2020/01/20/cuda-knowledge/"/>
     <id>https://ywfan617.github.io/2020/01/20/cuda-knowledge/</id>
     <published>2020-01-20T01:43:36.000Z</published>
-    <updated>2020-01-20T03:25:31.993Z</updated>
+    <updated>2020-01-31T01:46:57.549Z</updated>
     
     <summary type="html">
     
@@ -63,6 +63,10 @@
     
     </summary>
     
+      <category term="GPU" scheme="https://ywfan617.github.io/categories/GPU/"/>
+    
+    
+      <category term="cuda" scheme="https://ywfan617.github.io/tags/cuda/"/>
     
   </entry>
   
@@ -93,11 +97,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>线性代数基础一</title>
     <link href="https://ywfan617.github.io/2020/01/12/xian-xing-dai-shu-ji-chu-yi/"/>
     <id>https://ywfan617.github.io/2020/01/12/xian-xing-dai-shu-ji-chu-yi/</id>
-    <published>2020-01-12T07:45:48.398Z</published>
-    <updated>2020-01-29T13:28:56.370Z</updated>
+    <published>2020-01-12T07:45:48.000Z</published>
+    <updated>2020-01-31T01:49:11.102Z</updated>
     
     <summary type="html">
     
@@ -105,12 +109,16 @@
       
         
         
-          &lt;p&gt;title: 线性代数基础一&lt;br&gt;author: 范耀文&lt;br&gt;top: false&lt;br&gt;cover: false&lt;br&gt;toc: true&lt;br&gt;mathjax: true&lt;br&gt;date: 2020-01-12 15:45:48&lt;br&gt;img:
+          &lt;h1 id=&quot;basic-conception&quot;&gt;&lt;a href=&quot;#basic-conception&quot; class=&quot;headerlink&quot; title=&quot;basic conception&quot;&gt;&lt;/a&gt;basic conception&lt;/h1&gt;&lt;h2
         
       
     
     </summary>
     
+      <category term="机器学习数学篇" scheme="https://ywfan617.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%B0%E5%AD%A6%E7%AF%87/"/>
+    
+    
+      <category term="线性代数" scheme="https://ywfan617.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
     
   </entry>
   
