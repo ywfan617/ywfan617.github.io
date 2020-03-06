@@ -1,0 +1,1762 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <!-- shw2018 洪卫  modify 2019.08.15-->
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="python知识点, Data Miner KG DeepLearning MachineLearning TVfan ywfan  知识图谱 机器学习">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="工厂函数与内建函数
+内建函数，
+一般都是因为==使用频繁或是元操作==，所以通过内置函数的形式提供出来，通过对python的内置函数分类分析可以看出来：基本的数据操作基本都是一些数学运算（当然除了加减乘除）、逻辑操作、集合操作、基本IO操作">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>python知识点 | TV fan</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <style type="text/css">
+        
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">TV fan</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>标签</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">TV fan</div>
+        <div class="logo-desc">
+            
+            苏州大学 | 计算机科学与技术学院 | ada
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/ywfan617" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/ywfan617" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/ywfan617" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        python知识点
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- shw2018 洪卫  modify 2019.08.15-->
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/" target="_blank">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/编程语言/" class="post-category" target="_blank">
+                                编程语言
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-02-25
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        范耀文
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        3.4k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        13 分
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="工厂函数与内建函数"><a href="#工厂函数与内建函数" class="headerlink" title="工厂函数与内建函数"></a>工厂函数与内建函数</h2><ul>
+<li><p><strong>内建函数</strong>，</p>
+<p>一般都是因为==使用频繁或是元操作==，所以通过内置函数的形式提供出来，通过对python的内置函数分类分析可以看出来：基本的数据操作基本都是一些数学运算（当然除了加减乘除）、逻辑操作、集合操作、基本IO操作，然后就是对于语言自身的反射操作，还有就是字符串操作，也是比较常用的，尤其需要注意的是反射操作。</p>
+</li>
+<li><p><strong>工厂函数</strong></p>
+<p>工厂函数都是==类对象==, 即当你调用他们时, 创建的其实是一个类实例</p>
+</li>
+<li><p><strong>内建方法</strong></p>
+<p>内建类型的==成员方法==</p>
+</li>
+</ul>
+<h2 id="单例模式与工厂模式"><a href="#单例模式与工厂模式" class="headerlink" title="单例模式与工厂模式"></a>单例模式与工厂模式</h2><h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><ul>
+<li><p>含义</p>
+<p>确保某一个类中只有一个实例，而且自行实例化并向整个系统提供这个实例，这个类称为单例类，单例模式是一种对象型模式，整个系统中只需要存在一个对象，所有的信息都从这个对象获取，比如系统的配置对象，或者是线程池。这些场景下，就非常适合使用单例模式。</p>
+</li>
+<li><p>设计理念</p>
+<p>单例模式的实现只需要找一个变量存放创建的实例，然后每次获取实例时，先检查变量中是否已保存实例，如果没有则创建一个实例并将其存放到变量中，以后都从这个变量中获取实例就可以了。单例模式中，只会创建一次实例。</p>
+</li>
+<li><p>优点</p>
+<p>由于单例模式的设计要求使得每一个应用、活动只有一个实例，这使得不管我们怎么去调用、实例化，当前唯一存在一个实例，这在资源调度、日志管理、信息注册等应用场景下保证了只有一个实例对其进行操作，而避免了多个实例同时操作一个对象，这保证了协调系统的整体性和统一性。</p>
+</li>
+<li><p>实现方法</p>
+<ul>
+<li>类中静态方法new()的实现</li>
+<li>装饰器实现</li>
+</ul>
+</li>
+<li><p>实现方法一的设计代码</p>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class User(object):
+    __instance = None
+    def __new__(cls,name):
+        if not cls.__instance:
+            cls.__instance = object.__new__(cls)
+        return cls.__instance
+    def __init__(self,name):
+        self.name = name
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>参考文章</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/87524388" target="_blank" rel="noopener">单例模式的妙用</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><h4 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h4><ul>
+<li><p>定义</p>
+<p>简单工厂模式(Simple Factory Pattern)：又称为静态工厂方法(Static Factory Method)模式，它属于类创建型模式。==在简单工厂模式中，可以根据参数的不同返回不同类的实例==。简单工厂模式专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。</p>
+</li>
+<li><p>结构</p>
+<ul>
+<li><p>Factory：工厂类</p>
+</li>
+<li><p>Product：抽象产品类</p>
+</li>
+<li><p>Concrete Product：具体产品类</p>
+</li>
+</ul>
+</li>
+<li><p>设计代码</p>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python"># 抽象产品类
+class WeChat(object):
+
+    def send_message(self, content):
+        pass
+
+    def send_image(self, imageid):
+        pass
+# 具体产品类
+class AccountA(WeChat):
+
+    def send_message(self, content):
+        print("使用企业微信账号A推送信息: ", content)
+
+    def send_image(self, imageid):
+        print("使用企业微信账号A推送图片: ", imageid)
+
+class AccountB(WeChat):
+
+    def send_message(self, content):
+        print("使用企业微信账号B推送信息: ", content)
+
+    def send_image(self, imageid):
+        print("使用企业微信账号B推送图片: ", imageid)
+# 工厂类
+class WeChatFactory(object):
+    @staticmethod
+    # 增加账户需要修改此处代码，不否合开放封闭原则
+    def create_wechat(type):
+        if type=="A":
+            account=AccountA()
+            return account
+        elif type=="B":
+            account=AccountB()
+            return account
+        else:print("输入类型错误，没有此账户")
+# 使用者
+class Person(object):
+    def __init__(self,name):
+        self.name=name
+    def work(self,axe_type):
+        print("%s开始工作"%self.name)
+
+        #在原始社会，需要一把石斧
+        axe=Factory.create_axe(axe_type)
+        axe.Cut_tree()
+        #在现代社会，需要一把铁斧头
+if __name__ == "__main__":
+    # 实例化账号
+    wechat_factory = WeChatFactory()
+    # 创建账号A的微信对象
+    wechat1 = wechat_factory.create_wechat("A")
+    wechat2 = wechat_factory.create_wechat("A")
+    wechat3 = wechat_factory.create_wechat("A")
+    # 使用账号A对象发送信息
+    wechat1.send_message(content="haha")
+    wechat2.send_message(content="hehe")
+    wechat3.send_message(content="xixi")
+    # 创建账号B的微信对象
+    wechat4 = wechat_factory.create_wechat("B")
+    wechat5 = wechat_factory.create_wechat("B")
+    # 使用账号B对象发送信息
+    wechat4.send_message(content="heihei")
+    wechat5.send_message(content="pupu")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>简单工厂模式的优点</p>
+<ul>
+<li><p>工厂类含有必要的判断逻辑，可以决定在什么时候创建哪一个产品类的实例，客户端可以免除直接创建产品对象的责任，而仅仅“消费”产品；简单工厂模式通过这种做法实现了对责任的分割，它提供了专门的工厂类用于创建对象。</p>
+</li>
+<li><p>==客户端无须知道所创建的具体产品类的类名，只需要知道具体产品类所对应的参数即可，对于一些复杂的类名，通过简单工厂模式可以减少使用者的记忆量==。</p>
+</li>
+<li><p>通过引入配置文件，可以在不修改任何客户端代码的情况下更换和增加新的具体产品类，在一定程度上提高了系统的灵活性。</p>
+</li>
+</ul>
+</li>
+<li><p>简单工厂模式的缺点</p>
+<ul>
+<li><p>由于工厂类集中了所有产品创建逻辑，一旦不能正常工作，整个系统都要受到影响。</p>
+</li>
+<li><p>使用简单工厂模式将会增加系统中类的个数，在一定程序上增加了系统的复杂度和理解难度。</p>
+</li>
+<li><p>==系统扩展困难，一旦添加新产品就不得不修改工厂逻辑，在产品类型较多时，有可能造成工厂逻辑过于复杂，不利于系统的扩展和维护。==</p>
+</li>
+<li><p>简单工厂模式由于使用了静态工厂方法，造成工厂角色无法形成基于继承的等级结构。</p>
+</li>
+</ul>
+</li>
+<li><p>参考资料</p>
+<ul>
+<li><p><a href="https://blog.csdn.net/weixin_34233421/article/details/94607114" target="_blank" rel="noopener">python实现简单工厂模式</a></p>
+</li>
+<li><p><a href="https://www.jianshu.com/p/a1b97b93614e" target="_blank" rel="noopener">python实现工厂模式</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h4><ul>
+<li><p>定义</p>
+<p>==定义一个接口来创建对象==，工厂本身并不负责创建对象，由子类完成 2、工厂方法的创建通过继承而不是实例化完成 3、工厂方法使得设计更加具有可定制性，返回相同的实例或子类，而不是某种类型的对象（类似简单工厂方法）</p>
+</li>
+<li><p>设计理念</p>
+<ul>
+<li>定义一个抽象的工厂接口类</li>
+<li>定义一个抽象的产品接口类</li>
+<li>根据需要从产品接口派生产品子类</li>
+<li>对于每一个产品子类，从工厂接口派生工厂子类，负责该产品的创建</li>
+<li>客户端根据实际需要，调用工厂子类，创建所需要的产品。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>设计代码</p>
+<p>```python</p>
+<h1 id="抽象产品类"><a href="#抽象产品类" class="headerlink" title="抽象产品类"></a>抽象产品类</h1><p>class WeChat:</p>
+<pre><code>def send_message(self, content):
+    pass
+
+def send_image(self, imageid):
+    pass
+</code></pre><h1 id="具体产品类"><a href="#具体产品类" class="headerlink" title="具体产品类"></a>具体产品类</h1><p>class AccountA(WeChat):</p>
+<pre><code>def send_message(self, content):
+    print("使用企业微信账号A推送信息: ", content)
+
+def send_image(self, imageid):
+    print("使用企业微信账号A推送图片: ", imageid)
+</code></pre></li>
+</ul>
+<p>  class AccountB(WeChat):</p>
+<pre><code>  def send_message(self, content):
+      print("使用企业微信账号B推送信息: ", content)
+
+  def send_image(self, imageid):
+      print("使用企业微信账号B推送图片: ", imageid)
+</code></pre><h1 id="抽象工厂类"><a href="#抽象工厂类" class="headerlink" title="抽象工厂类"></a>抽象工厂类</h1><p>  class WeChatFactory:</p>
+<pre><code>  def create_wechat(self):
+      pass
+</code></pre><h1 id="具体工厂类"><a href="#具体工厂类" class="headerlink" title="具体工厂类"></a>具体工厂类</h1><p>  class AccountAFactory(WeChatFactory):</p>
+<pre><code>  def create_wechat(self):
+      return AccountA()
+</code></pre><p>  class AccountBFactory(WeChatFactory):</p>
+<pre><code>  def create_wechat(self):
+      return AccountB()
+</code></pre><p>  if <strong>name</strong> == “<strong>main</strong>“:</p>
+<pre><code>  # 实例化账号A
+  wechat_factory_a = AccountAFactory()
+  # 创建账号A的微信对象
+  wechat1 = wechat_factory_a.create_wechat()
+  wechat2 = wechat_factory_a.create_wechat()
+  wechat3 = wechat_factory_a.create_wechat()
+  # 使用账号A对象发送信息
+  wechat1.send_message(content="haha")
+  wechat2.send_message(content="hehe")
+  wechat3.send_message(content="xixi")
+
+  # 实例化账号B
+  wechat_factory_b = AccountBFactory()
+  # 创建账号B的微信对象
+  wechat4 = wechat_factory_b.create_wechat()
+  wechat5 = wechat_factory_b.create_wechat()
+  # 使用账号B对象发送信息
+  wechat4.send_message(content="heihei")
+  wechat5.send_message(content="pupu")
+</code></pre><h1 id="如果此时-两个微信账号都不够用了-需要增加第三个账号时-所有的类都不需要修改-只需创建新的类即可-符合开放封闭原则"><a href="#如果此时-两个微信账号都不够用了-需要增加第三个账号时-所有的类都不需要修改-只需创建新的类即可-符合开放封闭原则" class="headerlink" title="如果此时, 两个微信账号都不够用了, 需要增加第三个账号时, 所有的类都不需要修改, 只需创建新的类即可, 符合开放封闭原则"></a>如果此时, 两个微信账号都不够用了, 需要增加第三个账号时, 所有的类都不需要修改, 只需创建新的类即可, 符合开放封闭原则</h1><p>  class AccountC(WeChat):</p>
+<pre><code>  def send_message(self, content):
+      print("使用企业微信账号C推送信息: ", content)
+
+  def send_image(self, imageid):
+      print("使用企业微信账号C推送图片: ", imageid)
+</code></pre><p>  class AccountCFactory(WeChatFactory):</p>
+<pre><code>  def create_wechat(self):
+      return AccountC()
+</code></pre><pre><code>
++ 工厂方法模式的优点
+
+  工厂方法用来创建客户所需要的产品，同时还向客户隐藏了哪种具体产品类将被实例化这一细节 能够让工厂自主确定创建何种产品对象，而如何创建这个对象的细节则完全封装在具体工厂内部 在系统中加入新产品时，完全符合开闭原则
+
++ 工厂方法模式的缺点
+
+  系统中类的个数将成对增加，在一定程度上增加了系统的复杂度，会给系统带来一些额外的开销 增加了系统的抽象性和理解难度
+
++ 参考资料
+
+  + [Python语言实现工厂方法设计模式](https://www.jianshu.com/p/4e49f326169e)
++ [python工厂方法模式](https://www.cnblogs.com/welan/p/9126922.html)
+  + [[python 设计模式之工厂模式 Factory Pattern (简单工厂模式，工厂方法模式，抽象工厂模式)](https://www.cnblogs.com/baxianhua/p/11648485.html)](https://www.cnblogs.com/baxianhua/p/11648485.html)
+
+  ### 抽象工厂模式
+
++ 定义
+
+  + 提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。
+
+  + 对于同一系列的集中式生产，对于不同系列的分散式生产。
+  + 抽象工厂模式是所有形式的工厂模式中最为抽象和最具一般性的一种形式。当系统所提供的工厂生产的具体产品并不是一个简单的对象，而是多个==位于不同产品等级结构、属于不同类型的具体产品==时就可以使用抽象工厂模式 ，==抽象工厂模式中的具体工厂不只是创建一种产品，它负责创建一族产品== 当一个工厂等级结构可以创建出分属于不同产品等级结构的一个产品族中的所有对象时，抽象工厂模式比工厂方法模式更为简单、更有效率
+
++ 设计代码
+
+  ```python
+  # ------1、第一步，先定义形状类这个系列------
+  import math
+
+  #定义一个“形状”的接口，里面定义一个面积的接口方法，只有方法的定义，并没有实现体
+  class IShape(object): 
+      def Area(self):
+          pass
+
+  #定义4个图形类，都是实现Ishape接口，并且每一个图形都有一个可以计算面积的方法，相当于重写接口方法
+  class Circle(IShape):
+      def Area(self,radius):
+          return math.pow(radius,2)*math.pi
+
+  class Rectangle(IShape):
+      def Area(self,longth,width):
+          return 2*longth*width
+
+  class Triangle(IShape):
+      def Area(self,baselong,height):
+          return baselong*height/2
+
+  class Ellipse(IShape):
+      def Area(self,long_a,short_b):
+          return long_a*short_b*math.pi
+  # ------2、第二步，再定义颜色类这个系列------
+  #定义一个“颜色”的接口，里面定义一个颜色名称的接口方法，只有方法的定义，并没有实现体
+  class IColor(object): 
+      def color(self):
+          pass
+
+  #定义3个颜色类，都是实现IColor接口，并且每一个图形都有一个可以获取颜色名称的方法，相当于重写接口方法
+  class Red(IColor):
+      def color(self,name):
+          print(f'我的颜色是：{name}')
+
+  class Blue(IColor):
+      def color(self,name):
+          print(f'我的颜色是：{name}')
+
+  class Black(IColor):
+      def color(self,name):
+          print(f'我的颜色是：{name}')
+  # ------3、第三步，定义抽象工厂以及与每一个系列对应的工厂------
+  class IFactory:  #模拟接口
+      def create_shape(self):  #定义接口的方法，只提供方法的声明，不提供方法的具体实现
+          pass
+      def create_color(self):
+          pass
+
+  #创建形状这一个系列的工厂
+  class ShapeFactory(IFactory): #模拟类型实现某一个接口，实际上是类的继承
+      def create_shape(self, name):  #重写接口中的方法
+          if name =='Circle':
+              return Circle()
+          elif name == 'Rectangle':
+              return Rectangle()
+          elif name == 'Triangle':
+              return Triangle()
+          elif name == 'Ellipse':
+              return Ellipse()
+          else:
+              return None
+
+  #创建颜色这一个系列的工厂
+  class ColorFactory(IFactory): #模拟类型实现某一个接口，实际上是类的继承
+      def create_color(self, name):  #重写接口中的方法
+          if name =='Red':
+              return Red()
+          elif name =='Blue':
+              return Blue()
+          elif name =='Black':
+              return Black()
+          else:
+              return None
+  # ------4、第四步，定义产生工厂类的类——抽象工厂模式的核心所在------
+  #定义一个专门产生工厂的类
+  class FactoryProducer:
+      def get_factory(self,name):
+          if name=='Shape':
+              return ShapeFactory()
+          elif name=='Color':
+              return ColorFactory()
+          else:
+              return None
+   if __name__=='__main__':
+      factory_producer=FactoryProducer()
+      shape_factory=factory_producer.get_factory('Shape')
+      color_factory=factory_producer.get_factory('Color')
+      #--------------------------------------------------------------
+
+      circle=shape_factory.create_shape('Circle')
+      circle_area=circle.Area(2)
+      print(f'这是一个圆，它的面积是：{circle_area}')
+
+      rectangle=shape_factory.create_shape('Rectangle')
+      rectangle_area=rectangle.Area(2,3)
+      print(f'这是一个长方形，它的面积是：{rectangle_area}')
+
+      triangle=shape_factory.create_shape('Triangle')
+      triangle_area=triangle.Area(2,3)
+      print(f'这是一个三角形，它的面积是：{triangle_area}')
+
+      ellipse=shape_factory.create_shape('Ellipse')
+      ellipse_area=ellipse.Area(3,2)
+      print(f'这是一个椭圆，它的面积是：{ellipse_area}')
+
+      #---------------------------------------------------------------
+      red=color_factory.create_color('Red')
+      red.color('红色')
+
+      blue=color_factory.create_color('Blue')
+      blue.color('蓝色')
+
+      black=color_factory.create_color('Black')
+      black.color('黑色')
+</code></pre><ul>
+<li><p>抽象工厂模式的优点</p>
+<ul>
+<li>对于出现多系列的类型，创建逻辑清楚，因为是分门别类进行创建的；结合了“简单工厂模式”和“工厂方法模式”的优点</li>
+<li>易于交换“产品系列”，只要更改相应的工厂即可。</li>
+</ul>
+</li>
+<li><p>抽象工厂模式的缺点</p>
+<ul>
+<li>建立产品的时候很繁琐，需要增加和修改很多东西。<ul>
+<li>需要再定义一个抽象接口，然后定义很多的类去实现这个接口</li>
+<li>需要在抽象工厂接口中添加一个方法，并且还需要实现一个工厂类</li>
+<li>需要更改超级工厂Factory Producer类</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>参考资料</p>
+<ul>
+<li><a href="https://blog.csdn.net/qq_27825451/article/details/84284681" target="_blank" rel="noopener">一文详解“抽象工厂模式”以及python语言的实现</a></li>
+</ul>
+</li>
+</ul>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">谢谢老板们!</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://ywfan617.github.io" class="b-link-green">TV fan</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2020/02/25/python-zhi-shi-dian/" class="b-link-green">python知识点</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/02/26/pytorch-notes/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/banner/pytorch.jpg" class="responsive-img" alt="pytorch-notes">
+                        
+                        <span class="card-title">pytorch-notes</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            张量简介Tensor与VariableVariablevariable是torch.autograd中的数据类型，主要用于封装Tensor，进行自动求导
+
+data：被包装的Tensor
+grad：data的梯度
+grad_fn：创建Ten
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/机器学习框架/" class="post-category" target="_blank">
+                                    机器学习框架
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/pytorch/" target="_blank">
+                        <span class="chip bg-color">pytorch</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/01/28/transh/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="transH">
+                        
+                        <span class="card-title">transH</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            this is Knowledge Graph Embeddings by Translating on Hyperplanes
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/KG/" class="post-category" target="_blank">
+                                    KG
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Trans系列/" target="_blank">
+                        <span class="chip bg-color">Trans系列</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: TV fan<br />'
+            + '作者: ywfan<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row left-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; ywfan. 
+
+            <br>
+            <span id="sitetime"></span><span class="my-face"></span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+        
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+    
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">13.7k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/ywfan617" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1640788287@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/ywfan" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=1640788287&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/ywfan617" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2019, 12, 21, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+<script> 
+    $(document).ready(function () {
+    
+        var int = setInterval(fixCount, 50); // 50ms周期检测函数 
+        var pvcountOffset = 0; // 初始化首次数据 
+        var uvcountOffset = 0; 
+        
+        function fixCount() { 
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") { 
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset); 
+                clearInterval(int); 
+            } 
+            if ($("#busuanzi_container_site_pv").css("display") != "none") { 
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int); // 停止检测 
+            } 
+        } 
+    }); 
+</script>
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="/libs/materialize/materialize.min.js"></script>
+        <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+        <script src="/libs/aos/aos.js"></script>
+        <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+        <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+
+        
+            <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+        
+
+        <!-- 洪卫 shw2018 add 2019.08.28 -->
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "", clearTimeout(st)) : (document.title =
+                    "", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果  洪卫 shw2018 add 2019.09.09 -->
+        
+
+        <!-- 背景雪花飘落特效洪卫 shw2018 add 2019.09.10 -->
+        
+
+        <!-- 鼠标点击文字特效 洪卫 shw2018 add 2019.09.10-->
+        
+
+        <!-- 背景雪花飘落特效 洪卫 shw2018 add 2019.09.10 -->
+        
+
+        <!-- 在线聊天工具  洪卫 shw2018 add 2019.09.11 -->
+        
+
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+        
+
+    </body>
+</html>

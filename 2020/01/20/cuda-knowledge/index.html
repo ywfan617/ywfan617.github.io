@@ -10,16 +10,15 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
     <meta name="description" content="cuda的相关操作
-查看驱动版本
+查看驱动（drive cuda）版本
 nvidia-smi
 
 这个命令还可以实时显示GPU的使用情况
 watch -n 1 nvidia-smi  #一秒刷新一次
 
 
-
-不错的参考资料Pytorcha 使用不同版本的cuda
-显卡，显卡驱动，n">
+查看cuda toolkit的版本
+nvcc --v">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -698,7 +697,7 @@ watch -n 1 nvidia-smi  #一秒刷新一次
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        127
+                        138
                     </div>
                     
 
@@ -723,15 +722,19 @@ watch -n 1 nvidia-smi  #一秒刷新一次
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="cuda的相关操作"><a href="#cuda的相关操作" class="headerlink" title="cuda的相关操作"></a>cuda的相关操作</h2><ol>
-<li><p>查看驱动版本</p>
+<li><p>查看驱动（drive cuda）版本</p>
 <pre class="line-numbers language-lang-bash"><code class="language-lang-bash">nvidia-smi
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>这个命令还可以实时显示GPU的使用情况</p>
 <pre class="line-numbers language-lang-bash"><code class="language-lang-bash">watch -n 1 nvidia-smi  #一秒刷新一次
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
+<li><p>查看cuda toolkit的版本</p>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">nvcc --version
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 </ol>
-<h2 id="不错的参考资料"><a href="#不错的参考资料" class="headerlink" title="不错的参考资料"></a>不错的参考资料</h2><p><a href="https://www.cnblogs.com/yhjoker/p/10972795.html" target="_blank" rel="noopener">Pytorcha 使用不同版本的cuda</a></p>
+<h2 id="不错的参考资料"><a href="#不错的参考资料" class="headerlink" title="不错的参考资料"></a>不错的参考资料</h2><p><a href="https://www.cnblogs.com/yhjoker/p/10972795.html" target="_blank" rel="noopener">Pytorch 使用不同版本的cuda</a></p>
 <p><a href="https://www.cnblogs.com/marsggbo/p/11838823.html" target="_blank" rel="noopener">显卡，显卡驱动，nvcc,cuda概念的介绍</a></p>
 <p><a href="https://www.jianshu.com/p/9f89633bad57" target="_blank" rel="noopener">安装详解</a></p>
 <script>
@@ -951,8 +954,8 @@ watch -n 1 nvidia-smi  #一秒刷新一次
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/知识图谱嵌入/" class="post-category" target="_blank">
-                                    知识图谱嵌入
+                            <a href="/categories/KG/" class="post-category" target="_blank">
+                                    KG
                                 </a>
                             
                             
@@ -962,8 +965,8 @@ watch -n 1 nvidia-smi  #一秒刷新一次
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/TranH论文笔记/" target="_blank">
-                        <span class="chip bg-color">TranH论文笔记</span>
+                    <a href="/tags/Trans系列/" target="_blank">
+                        <span class="chip bg-color">Trans系列</span>
                     </a>
                     
                 </div>
@@ -989,7 +992,7 @@ watch -n 1 nvidia-smi  #一秒刷新一次
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            链路预测的背景通常来说，KB以三元组 (h, r, t) 的集合的形式呈现，其中 h是头实体，t是尾实体，而r是关系。例如，（巴黎，是首都，法国）就是一个知识三元组。尽管现存的KB包含了很多这样的信息，但众所周知，KB中仍有大量的知识缺失。
+                            介绍了链路预测的相关知识。
                         
                     </div>
                     <div class="publish-info">
@@ -1187,7 +1190,7 @@ watch -n 1 nvidia-smi  #一秒刷新一次
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">5.2k</span> 字
+                <span class="white-color">13.7k</span> 字
             
 
             
