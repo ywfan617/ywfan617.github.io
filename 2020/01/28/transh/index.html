@@ -532,7 +532,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/paper.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -740,7 +740,7 @@
 </ul>
 <h2 id="tranH"><a href="#tranH" class="headerlink" title="tranH"></a>tranH</h2><ul>
 <li><p>核心思想</p>
-<p>每一个关系定义一个超平面${W}_r$ ,和一个关系向量$\textbf{d}_r$ 。$\textbf{h}_{\bot},\textbf{t}_{\bot}$是$h$，$t$在$W_r$ 上的投影向量，我们希望正确的三元组满足$\textbf{h}_{\bot}+\textbf{d}_r=\textbf{t}_{\bot}$ 。<strong>这样能够使得同一实体在不同关系中的意义不同，同时不同实体，在同一关系中的意义，也可以相同。</strong><br><img src="/images/transH/1.png" alt="1"></p>
+<p>每一个关系定义一个超平面${W}_r$ ,和一个关系向量$\textbf{d}_r$ 。$\textbf{h}_{\bot},\textbf{t}_{\bot}$是$h$，$t$在$W_r$ 上的投影向量，我们希望正确的三元组满足$\textbf{h}_{\bot}+\textbf{d}_r=\textbf{t}_{\bot}$ 。<strong>这样能够使得同一实体在不同关系中的意义不同，同时不同实体，在同一关系中的意义，也可以相同。</strong><br><img src="/images/transH/1.png" alt="TransH" style="zoom:50%;"></p>
 </li>
 <li><p>得分函数</p>
 <script type="math/tex; mode=display">
@@ -750,7 +750,7 @@ d(\textbf{h}+\textbf{r},\textbf{t})=f_r(\textbf{h},\textbf{t})=\lVert \textbf{h}
 <script type="math/tex; mode=display">
   \textbf{h}_{\textbf{w}_r}=\textbf{w}^T\textbf{h}\textbf{w} (\textbf{w} \cdot \textbf{h}=\textbf{w}^T\textbf{h})</script><p>  这是因为$|w_r||h|cos\theta$ 表示h在w方向上投影的长度，再乘以$w_r$即为$h$在$w_r$上的投影向量，所以得出</p>
 <script type="math/tex; mode=display">
-  f_r(\textbf{h},\textbf{t})=\lVert \textbf{h}_{\bot}+\textbf{d}_r-\textbf{t}_{\bot}\rVert_2^2=\lVert \textbf{h}-\textbf{h}_{\textbf{w}_r}+\textbf{d}_r-(\textbf{t}-\textbf{t}_{\textbf{w}_r})\rVert_2^2=\lVert \textbf{h}-\textbf{w}^T\textbf{h}\textbf{w}+\textbf{d}_r-(\textbf{t}-\textbf{w}^T\textbf{t}\textbf{w})\rVert_2^2</script><p><img src="/images/transH/2.png" alt="2"></p>
+  f_r(\textbf{h},\textbf{t})=\lVert \textbf{h}_{\bot}+\textbf{d}_r-\textbf{t}_{\bot}\rVert_2^2=\lVert \textbf{h}-\textbf{h}_{\textbf{w}_r}+\textbf{d}_r-(\textbf{t}-\textbf{t}_{\textbf{w}_r})\rVert_2^2=\lVert \textbf{h}-\textbf{w}^T\textbf{h}\textbf{w}+\textbf{d}_r-(\textbf{t}-\textbf{w}^T\textbf{t}\textbf{w})\rVert_2^2</script><p><img src="/images/transH/2.png" alt="TransH" style="zoom:50%;"></p>
 <ul>
 <li>代价函数</li>
 </ul>
@@ -766,7 +766,7 @@ L=\sum_{(h,r,t)\in\Delta}\sum_{(h^{'},r^{'},t^{'})\in \Delta}[f_r(\textbf{h},\te
 </li>
 <li><p>无约束代价函数</p>
 <script type="math/tex; mode=display">
-L=\sum_{(h,r,t)\in\Delta}\sum_{(h^{'},r^{'},t^{'})\in \Delta}[f_r(\textbf{h},\textbf{t})+\gamma+f_{r^{'}}(\textbf{h}^{'},\textbf{t}^{'})]_++\C \{\sum_{e\in E}[||{\bf e}||_2^2 -1]_+ + \sum_{r \in R}left[\frac{({\bf w}_t^T {\bf d}_r)^2}{||{\bf d}_r||_2^2} - \epsilon ^2 ]_+ \}</script></li>
+L=\sum_{(h,r,t)\in\Delta}\sum_{(h^{'},r^{'},t^{'})\in \Delta}[f_r(\textbf{h},\textbf{t})+\gamma+f_{r^{'}}(\textbf{h}^{'},\textbf{t}^{'})]_+ + \{\sum_{e\in E}[||{\bf e}||_2^2 -1]_+ + \sum_{r \in R}left[\frac{({\bf w}_t^T {\bf d}_r)^2}{||{\bf d}_r||_2^2} - \epsilon ^2 ]_+ \}</script></li>
 </ul>
 <ul>
 <li>C是软约束的超参数权重</li>
@@ -1016,19 +1016,18 @@ N-1 & \mbox{for} & tph_r < 1.5,hpt_r \geq 1.5\\
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/25/python-zhi-shi-dian/">
+                <a href="/2020/02/25/xian-xing-dai-shu-ji-chu-yi/">
                     <div class="card-image">
                         
+                        <img src="/medias/banner/linear_math.jpg" class="responsive-img" alt="线性代数基础一">
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="python知识点">
-                        
-                        <span class="card-title">python知识点</span>
+                        <span class="card-title">线性代数基础一</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            总结了一些Python中的知识点。
+                            总结了线性代数常用的知识点。
                         
                     </div>
                     <div class="publish-info">
@@ -1039,8 +1038,8 @@ N-1 & \mbox{for} & tph_r < 1.5,hpt_r \geq 1.5\\
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/编程语言/" class="post-category" target="_blank">
-                                    编程语言
+                            <a href="/categories/线性代数/" class="post-category" target="_blank">
+                                    线性代数
                                 </a>
                             
                             
@@ -1050,8 +1049,8 @@ N-1 & \mbox{for} & tph_r < 1.5,hpt_r \geq 1.5\\
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/" target="_blank">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/线性代数/" target="_blank">
+                        <span class="chip bg-color">线性代数</span>
                     </a>
                     
                 </div>
@@ -1068,8 +1067,7 @@ N-1 & \mbox{for} & tph_r < 1.5,hpt_r \geq 1.5\\
                 <a href="/2020/01/20/cuda-knowledge/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="cuda_knowledge">
+                        <img src="/medias/banner/gpu.jpg" class="responsive-img" alt="cuda_knowledge">
                         
                         <span class="card-title">cuda_knowledge</span>
                     </div>
@@ -1077,7 +1075,7 @@ N-1 & \mbox{for} & tph_r < 1.5,hpt_r \geq 1.5\\
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这个笔记记录了一些关于显卡，GPU,cuda的相关知识
+                            这个笔记记录了一些关于显卡的相关知识。
                         
                     </div>
                     <div class="publish-info">

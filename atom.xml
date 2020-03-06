@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ywfan617.github.io/"/>
-  <updated>2020-03-06T12:15:15.861Z</updated>
+  <updated>2020-03-06T12:36:26.414Z</updated>
   <id>https://ywfan617.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://ywfan617.github.io/2020/02/29/transr/"/>
     <id>https://ywfan617.github.io/2020/02/29/transr/</id>
     <published>2020-02-29T02:30:38.000Z</published>
-    <updated>2020-03-06T12:15:15.861Z</updated>
+    <updated>2020-03-06T12:36:26.414Z</updated>
     
     <summary type="html">
     
@@ -47,7 +47,7 @@
     <link href="https://ywfan617.github.io/2020/02/27/pytorch-shu-ju-chu-li/"/>
     <id>https://ywfan617.github.io/2020/02/27/pytorch-shu-ju-chu-li/</id>
     <published>2020-02-27T06:43:43.000Z</published>
-    <updated>2020-03-06T12:08:12.369Z</updated>
+    <updated>2020-03-06T12:29:47.533Z</updated>
     
     <summary type="html">
     
@@ -73,7 +73,7 @@
     <link href="https://ywfan617.github.io/2020/02/26/pytorch-notes/"/>
     <id>https://ywfan617.github.io/2020/02/26/pytorch-notes/</id>
     <published>2020-02-26T07:31:51.000Z</published>
-    <updated>2020-03-06T12:08:42.229Z</updated>
+    <updated>2020-03-06T12:27:01.601Z</updated>
     
     <summary type="html">
     
@@ -99,7 +99,7 @@
     <link href="https://ywfan617.github.io/2020/02/25/python-zhi-shi-dian/"/>
     <id>https://ywfan617.github.io/2020/02/25/python-zhi-shi-dian/</id>
     <published>2020-02-25T01:46:58.000Z</published>
-    <updated>2020-03-06T11:58:56.954Z</updated>
+    <updated>2020-03-06T12:25:14.031Z</updated>
     
     <summary type="html">
     
@@ -121,11 +121,37 @@
   </entry>
   
   <entry>
+    <title>线性代数基础一</title>
+    <link href="https://ywfan617.github.io/2020/02/25/xian-xing-dai-shu-ji-chu-yi/"/>
+    <id>https://ywfan617.github.io/2020/02/25/xian-xing-dai-shu-ji-chu-yi/</id>
+    <published>2020-02-25T01:46:58.000Z</published>
+    <updated>2020-03-06T12:51:09.509Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;basic-conception&quot;&gt;&lt;a href=&quot;#basic-conception&quot; class=&quot;headerlink&quot; title=&quot;basic conception&quot;&gt;&lt;/a&gt;basic conception&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="线性代数" scheme="https://ywfan617.github.io/categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+    
+      <category term="线性代数" scheme="https://ywfan617.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>transH</title>
     <link href="https://ywfan617.github.io/2020/01/28/transh/"/>
     <id>https://ywfan617.github.io/2020/01/28/transh/</id>
     <published>2020-01-28T02:40:08.000Z</published>
-    <updated>2020-03-06T12:14:33.827Z</updated>
+    <updated>2020-03-06T12:41:07.156Z</updated>
     
     <summary type="html">
     
@@ -151,7 +177,7 @@
     <link href="https://ywfan617.github.io/2020/01/20/cuda-knowledge/"/>
     <id>https://ywfan617.github.io/2020/01/20/cuda-knowledge/</id>
     <published>2020-01-20T01:43:36.000Z</published>
-    <updated>2020-03-06T11:49:14.325Z</updated>
+    <updated>2020-03-06T12:30:30.759Z</updated>
     
     <summary type="html">
     
@@ -179,7 +205,7 @@
     <link href="https://ywfan617.github.io/2020/01/15/link-prediction/"/>
     <id>https://ywfan617.github.io/2020/01/15/link-prediction/</id>
     <published>2020-01-15T04:09:41.000Z</published>
-    <updated>2020-03-06T11:53:20.642Z</updated>
+    <updated>2020-03-06T12:52:27.517Z</updated>
     
     <summary type="html">
     
@@ -201,34 +227,11 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="https://ywfan617.github.io/2020/01/12/xian-xing-dai-shu-ji-chu-yi/"/>
-    <id>https://ywfan617.github.io/2020/01/12/xian-xing-dai-shu-ji-chu-yi/</id>
-    <published>2020-01-12T07:45:48.398Z</published>
-    <updated>2020-03-04T13:46:06.139Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h1 id=&quot;basic-conception&quot;&gt;&lt;a href=&quot;#basic-conception&quot; class=&quot;headerlink&quot; title=&quot;basic conception&quot;&gt;&lt;/a&gt;basic
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>matplotplit_note</title>
     <link href="https://ywfan617.github.io/2019/12/21/matplotlib-note/"/>
     <id>https://ywfan617.github.io/2019/12/21/matplotlib-note/</id>
     <published>2019-12-21T09:53:50.000Z</published>
-    <updated>2020-03-05T07:04:30.201Z</updated>
+    <updated>2020-03-06T12:34:40.102Z</updated>
     
     <summary type="html">
     
