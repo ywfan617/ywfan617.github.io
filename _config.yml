@@ -42,13 +42,14 @@ relative_link: false
 future: true
 highlight:
   enable: false
-  line_number: false
-  auto_detect: false
+  line_number: true
+  auto_detect: true
   tab_replace:
+
 
 prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
-  theme: 'default'
+  theme: 'tomorrow'
   line_number: true    # default false
   custom_css: 
 
@@ -131,7 +132,7 @@ baidu_url_submit:
 
 
 # live2d:
-  # enable: true
+  # enable: false
   # scriptFrom: local
   # pluginRootPath: live2dw/
   # pluginJsPath: lib/
@@ -173,6 +174,6 @@ baidu_url_submit:
 
 # lazyload configuration  2019.08.14
 lazyload:
-  enable: true 
+  enable: false 
   onlypost: true
   loadingImg: https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg    # eg ./images/loading.gif

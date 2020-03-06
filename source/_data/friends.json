@@ -17,5 +17,17 @@
         "title": "搜索查找",
         "introduction": "各种常用网站列表",
         "avatar": "/medias/avatars/search.png"
+    },{
+        "name": "公式使用",
+        "url": "https://www.cnblogs.com/csu-lmw/p/10434854.html",
+        "title": "数学公式",
+        "introduction": "markdown中latex的使用",
+        "avatar": "/medias/avatars/latex.png"
+    },{
+        "name": "莫凡学习",
+        "url": "https://morvanzhou.github.io/",
+        "title": "莫凡学习",
+        "introduction": "莫凡学习网站",
+        "avatar": "/medias/avatars/latex.png"
     }
 ]
